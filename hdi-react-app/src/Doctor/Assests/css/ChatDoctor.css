@@ -1,0 +1,113 @@
+.chatDoctorNav{
+    margin:0px;
+    padding:0px;
+    width:100%;
+    height:7vh;
+   background-color:black;
+   color:white; 
+}
+.chatDoctorNav a h1{
+    margin:0px;
+    padding:0px;
+    padding-top:1rem;
+    padding-left:1rem;
+}
+.chatDoctorNav a{
+    color: white;
+    text-decoration: none;
+}
+.mainchatContainer{
+    width:100%;
+    height:93vh;
+    background-color:rgb(65, 64, 71);
+    display: flex;
+}
+.leftSideBar{
+    width:40px;
+    height:100%;
+    background-color: black;
+}
+.doctorListBlock{
+    width:30vw;
+    height:90vh;
+    /* border:1px solid red; */
+    overflow-y:auto;
+}
+.msgBlock{
+    width:70vw;
+    height:90vh;
+    overflow: auto;
+    background-color:rgb(52, 51, 51);
+}
+.doctorListBlock ul{
+    margin:0px;
+    padding:0px;
+    list-style: none;
+}
+
+.doctorListBlock ul li{
+    width:97%;
+    height:4rem;
+    border-bottom:3px solid rgb(90, 90, 90);
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    padding:5px;
+}
+.doctors{
+    width:100%;
+    height:100%;
+    display: flex;
+    color: white;
+}
+.doctorListBlock ul li:hover{
+    cursor: pointer;
+    background-color:rgb(75, 73, 73);
+}
+.doctors p{
+    width:max-content;
+    height:1rem;
+    font-size:20px;
+    font-family:sans-serif;
+    font-weight: 500;
+    padding-left:1rem;
+}
+.doctors img{
+    width:50px;
+    height:50px;
+}
+
+.msgnav{
+    width:100%;
+    height:8vh;
+    background-color: rgb(70, 68, 68);
+    font-size:22px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainchat{
+    width:100%;
+    height:72vh;
+}
+.sendmsgBlock{
+    width:100%;
+    height:10vh;
+    background-color:rgb(72, 71, 71);
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    margin-bottom:0px;
+}
+.sendmsgBlock input{
+    width:80%;
+    height:70%;
+    background-color: rgb(44, 44, 44);
+    color:white;
+    margin-left:1rem;
+    border:1px solid gray;
+    font-size:18px;
+    border-radius:10px;
+    margin-right:1rem;
+}

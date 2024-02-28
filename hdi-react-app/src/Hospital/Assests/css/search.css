@@ -1,0 +1,121 @@
+.rootParentSearch{
+    background-color:rgb(202, 229, 238);
+    width:100%;
+    min-height:90vh;
+    margin:0px;
+    padding: 0px;
+    overflow: auto;
+
+}
+
+.searchBlock{
+    width:60%;
+    padding:2rem;
+    margin:auto;
+    margin-top:2%;
+    box-shadow:10px 10px gray;
+    border-radius:5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+.FilterBlock{
+    width:90%;
+    height:max-content;
+    padding:1rem;
+    margin:auto;
+    margin-top:2%;
+}
+
+.proffessionBlock{
+    width:80%;
+    height:max-content;
+    padding:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.professionText{
+    width:20%;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    font-size:18px;
+}
+
+.proffessions{
+    width:60%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.pbele{
+    width:max-content;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    background-color: aliceblue;
+    border-radius:5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blueviolet;
+}
+.salaryBlock{
+    width:80%;
+    height:max-content;
+    padding:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.salaryText{
+    width:20%;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    font-size:18px;
+}
+
+.salaryRanges{
+    width:60%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.displayResult{
+    width:90%;
+    height: auto;
+    padding:1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.searchresult{
+    width:100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: auto;
+    grid-row: auto;
+    /* border:1px solid red; */
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    row-gap:2rem;
+}
+
+.cardbody{
+    width:18rem;
+}
+
+.avatarImg{
+   height:150px;
+}
