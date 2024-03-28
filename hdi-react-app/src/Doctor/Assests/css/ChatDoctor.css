@@ -90,6 +90,14 @@
 .mainchat{
     width:100%;
     height:72vh;
+    padding:1rem;
+    color: aliceblue;
+}
+.senderclass{
+    text-align: right;
+}
+.receiverclass{
+    text-align: left;
 }
 .sendmsgBlock{
     width:100%;

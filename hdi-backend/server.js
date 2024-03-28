@@ -211,6 +211,24 @@ app.post('/sendmsg',async(req,res)=>{
     res.send({status:"ok",data:result});
 });
 
+app.post('/fetchChats',async(req,res)=>{
+    console.log("Fetch Chats");
+    const hostChater = req.body.sender;
+    const currChater = req.body.receiver;
+    console.log(hostChater);
+    console.log(currChater);
+    const result = await chatcoll.find(
+        {
+            $or:[
+                {sender:hostChater ,receiver:currChater},
+                {sender:currChater ,receiver:hostChater}
+            ]
+        }
+    );
+    console.log(result[0]);
+    res.send({status:"ok",data:result[0]});
+});
+
 app.listen(5000,(req,res)=>{
     console.log(`server live on port 5000`);
 });

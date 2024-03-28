@@ -7,6 +7,8 @@ export default function ChatDoctor() {
   const [hostemail, setHostEmail] = useState("");
   const [dataDoctor, setDataDoctor] = useState([]);
   const [msg,setmsg] = useState("");
+  let chatdata = "";
+  const [chatsData , setChatsData] = useState([]);
   const fetchDoctors = async () => {
     try {
       let responseDoctor = await fetch("http://localhost:5000/findDoctor", {
@@ -20,9 +22,35 @@ export default function ChatDoctor() {
         let data = await responseDoctor.json();
         setDataDoctor(data.data);
         setHostEmail(data.hostDoctor);
-        console.log(dataDoctor);
       } else {
         console.error("Error:", responseDoctor.statusText);
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
+  const fetchChats = async (semail) => {
+    console.log(semail);
+    try {
+      let responseChats = await fetch("http://localhost:5000/fetchChats", {
+        method: "post",
+        body: JSON.stringify({sender:hostemail,receiver:semail}),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (responseChats.ok) {
+        let data = await responseChats.json();
+        if(data.data != undefined ){
+          chatdata = data.data.msgContainer;
+          setChatsData(chatdata);
+        }else{
+          chatdata = "";
+          setChatsData(chatdata);
+        }
+        console.log("chatdata",chatdata);
+      } else {
+        console.error("Error:", responseChats.statusText);
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -45,11 +73,17 @@ export default function ChatDoctor() {
       console.error("An error occurred:", error);
     }
     setmsg("");
+    fetchChats(currentChater);
   }
+
+  const setChat = async (selectemail) => {
+    await startChat(selectemail);
+    fetchChats(selectemail);
+}
 
   const startChat = async (selectemail) => {
     setCurrentChater(selectemail);
-  };
+  }
 
   return (
     <>
@@ -73,7 +107,7 @@ export default function ChatDoctor() {
               .map((doctor) => (
                 <li>
                   <div
-                    onClick={() => startChat(doctor.email)}
+                    onClick={() => setChat(doctor.email)}
                     className="doctors"
                   >
                     <img
@@ -88,11 +122,20 @@ export default function ChatDoctor() {
         </div>
         <div className="msgBlock">
           <div className="msgnav">{currentChater}</div>
-          <div className="mainchat"></div>
+              
+              {/* chat block */}
+          <div className="mainchat">
+           {chatsData && chatsData.map((chats)=>(
+            chats.sender === hostemail ? (
+              <p className="senderclass" key={chats.id}>{chats.msg}</p>
+          ) : <p className="receiverclass" key={chats.id}>{chats.msg}</p>
+           ))}
+          </div>
+
           <div className="sendmsgBlock">
             <input value={msg} onChange={(e)=>setmsg(e.target.value)} type="text" />
             <button onClick={sendMsg} type="button" class="btn btn-success">
-              Success
+              Send
             </button>
           </div>
         </div>
