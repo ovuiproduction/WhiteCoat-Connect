@@ -1,0 +1,40 @@
+.active-section {
+  padding: 20px;
+}
+
+.active-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.active-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.active-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.active-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.active-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.no-active {
+  padding: 30px;
+  text-align: center;
+  color: #888;
+}

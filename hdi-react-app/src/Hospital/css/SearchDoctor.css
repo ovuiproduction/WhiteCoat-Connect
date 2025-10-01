@@ -1,0 +1,668 @@
+/* SearchDoctor Component Styles */
+.search-doctor-section {
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+  border-radius: 2px;
+}
+
+/* Search Form */
+.search-form {
+  margin-bottom: 2rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: var(--white);
+  font-family: inherit;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: var(--light-text);
+  font-weight: 400;
+}
+
+.search-btn {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 0 2rem;
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+}
+
+.search-icon {
+  font-size: 1.2rem;
+}
+
+.search-text {
+  font-weight: 600;
+}
+
+/* Filters Container */
+.filters-container {
+  background: var(--light-blue);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.clear-filters-btn {
+  background: none;
+  border: 2px solid var(--light-text);
+  color: var(--light-text);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.clear-filters-btn:hover {
+  border-color: var(--error);
+  color: var(--error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.filter-group {
+  margin-bottom: 2rem;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-label {
+  display: block;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filter-chip {
+  padding: 0.75rem 1.5rem;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--light-text);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.filter-chip:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.filter-chip.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Results Section */
+.results-section {
+  margin-top: 2rem;
+}
+
+.results-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.results-count {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+/* Doctors Grid */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.doctor-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-blue);
+}
+
+.doctor-avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--light-blue);
+  background: var(--light-blue);
+}
+
+.doctor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-avatar img {
+  transform: scale(1.1);
+}
+
+.doctor-info {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.doctor-role {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.doctor-email {
+  color: var(--light-text);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.doctor-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.meta-item {
+  font-size: 0.9rem;
+  color: var(--dark-text);
+  line-height: 1.4;
+}
+
+.meta-item strong {
+  color: var(--light-text);
+  font-weight: 600;
+}
+
+.request-btn {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+  color: var(--white);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
+.request-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.request-btn:active {
+  transform: translateY(0);
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border);
+  border-left: 4px solid var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--light-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* No Results State */
+.no-results {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--light-text);
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+  background: var(--light-blue);
+  border-radius: 12px;
+  border: 2px dashed var(--border);
+}
+
+.no-results p {
+  margin-bottom: 1rem;
+}
+
+/* Empty State Action */
+.empty-state-action {
+  background: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.empty-state-action:hover {
+  background: var(--secondary-blue);
+}
+
+/* Filter Active State */
+.filters-active {
+  border-left: 4px solid var(--accent-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .doctors-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+  
+  .search-doctor-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-doctor-section {
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-input-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-btn {
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
+  
+  .filters-container {
+    padding: 1.5rem;
+  }
+  
+  .filter-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .filter-options {
+    justify-content: center;
+  }
+  
+  .doctors-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .doctor-card {
+    padding: 1.25rem;
+  }
+  
+  .doctor-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .search-input {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  .filters-container {
+    padding: 1rem;
+  }
+  
+  .filter-options {
+    gap: 0.5rem;
+  }
+  
+  .filter-chip {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  .doctor-name {
+    font-size: 1.25rem;
+  }
+  
+  .doctor-role {
+    font-size: 1rem;
+  }
+  
+  .request-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+  }
+  
+  .loading {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Animation for new results */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doctor-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Stagger animation for multiple cards */
+.doctors-grid .doctor-card:nth-child(1) { animation-delay: 0.1s; }
+.doctors-grid .doctor-card:nth-child(2) { animation-delay: 0.2s; }
+.doctors-grid .doctor-card:nth-child(3) { animation-delay: 0.3s; }
+.doctors-grid .doctor-card:nth-child(4) { animation-delay: 0.4s; }
+.doctors-grid .doctor-card:nth-child(5) { animation-delay: 0.5s; }
+.doctors-grid .doctor-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Focus states for accessibility */
+.search-input:focus,
+.filter-chip:focus,
+.request-btn:focus,
+.clear-filters-btn:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .doctor-card {
+    border: 2px solid var(--dark-text);
+  }
+  
+  .filter-chip.active {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .doctor-card,
+  .filter-chip,
+  .search-btn,
+  .request-btn {
+    transition: none;
+    animation: none;
+  }
+  
+  .spinner {
+    animation-duration: 2s;
+  }
+}
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #fff;
+  width: 500px;
+  max-width: 95%;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* Input Fields */
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Salary Fields Side by Side */
+.salary-inputs {
+  display: flex;
+  gap: 12px;
+}
+
+.salary-inputs input {
+  flex: 1;
+}
+
+/* Textarea */
+.modal-content textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-actions .btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.modal-actions .btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.modal-actions .btn-primary:hover {
+  background: #0056b3;
+}
+
+.modal-actions .btn-secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.modal-actions .btn-secondary:hover {
+  background: #c7c7c7;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

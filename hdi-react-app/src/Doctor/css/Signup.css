@@ -1,0 +1,50 @@
+/* Doctor Service Tag Styles */
+.doctor-service-tag {
+  background: linear-gradient(135deg, #27ae60 0%, #219a52 100%) !important;
+}
+
+.doctor-terms-link {
+  color: #27ae60 !important;
+}
+
+.doctor-terms-link:hover {
+  color: #219a52 !important;
+}
+
+/* Doctor specific textarea focus */
+.doctor-modal-header ~ .modal-body .form-textarea:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+/* Form textarea styles */
+.form-textarea {
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-textarea.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Doctor specific textarea focus */
+.doctor-modal-header ~ .modal-body .form-textarea:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}

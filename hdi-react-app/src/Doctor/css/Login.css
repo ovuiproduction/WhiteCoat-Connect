@@ -1,0 +1,71 @@
+/* Doctor Specific Modal Styles */
+.doctor-modal-header {
+  border-bottom: 1px solid #e9ecef;
+  position: relative;
+}
+
+.doctor-modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
+}
+
+.doctor-submit-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #219a52 100%) !important;
+}
+
+.doctor-submit-btn:hover:not(:disabled) {
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4) !important;
+}
+
+.doctor-forgot-password {
+  color: #27ae60 !important;
+}
+
+.doctor-forgot-password:hover {
+  color: #219a52 !important;
+}
+
+.doctor-link-button {
+  color: #27ae60 !important;
+}
+
+.doctor-link-button:hover {
+  color: #219a52 !important;
+}
+
+/* Doctor specific input focus states */
+.doctor-modal-header ~ .modal-body .form-input:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+/* Update the existing modal styles to be more generic */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 1rem;
+  position: relative;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+}
+
+.modal-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
