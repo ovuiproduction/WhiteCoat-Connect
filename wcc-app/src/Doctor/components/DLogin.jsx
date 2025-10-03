@@ -83,6 +83,8 @@ const DLogin = ({ onClose, switchToSignup }) => {
             token: data.token,
           })
         );
+        sessionStorage.setItem("userId", data.doctorId);
+        sessionStorage.setItem("userType", "Doctor"); // "Doctor" or "Hospital"
         navigate("/homeDoctor", { state: { doctorId: data.doctorId } });
       } else {
         setErrors({ submit: data.message || "Login failed" });

@@ -8,7 +8,7 @@ const messageSchema = new mongoose.Schema(
       required: true
     },
     sender: {
-      id: { type: mongoose.Schema.Types.ObjectId, required: true },
+      id: { type: mongoose.Schema.Types.ObjectId, required: true, refPath: 'sender.type' },
       type: { type: String, enum: ["Doctor", "Hospital"], required: true }
     },
     text: {

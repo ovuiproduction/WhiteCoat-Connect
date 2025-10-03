@@ -4,12 +4,13 @@ const conversationSchema = new mongoose.Schema(
   {
     participants: [
       {
-        id: { type: mongoose.Schema.Types.ObjectId, required: true },
+        id: { type: mongoose.Schema.Types.ObjectId, required: true, refPath: 'participants.type' },
         type: { type: String, enum: ["Doctor", "Hospital"], required: true }
       }
     ],
     lastMessage: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Message"   // reference to Message schema
     },
     updatedAt: {
       type: Date,

@@ -5,7 +5,6 @@ import {
   ClipboardList,
   Briefcase,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import "../css/Home.css";
 import UpdateProfileDoctor from "./UpdateProfileDoctor";
 import { toast } from "react-toastify";
@@ -14,13 +13,11 @@ import DoctorRequests from "./DoctorRequests";
 import ActiveCollaborations from "./ActiveCollaborations";
 
 export default function DHome() {
-  const navigate = useNavigate();
   const [notifications, setNotifications] = useState([]);
   const [doctor, setDoctor] = useState(null);
   const [activeTab, setActiveTab] = useState("dashboard");
   const [showNotifications, setShowNotifications] = useState(false);
-  const doctorId =
-    localStorage.getItem("doctorId") || sessionStorage.getItem("doctorId");
+  const doctorId = sessionStorage.getItem("doctorId") || localStorage.getItem("doctorId") ;
   const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false);
 
   const fetchDoctor = async () => {
@@ -353,15 +350,6 @@ export default function DHome() {
           </div>
         </div>
       )}
-
-      {/* Chat Floating Button */}
-      <button
-        className="chat-floating-btn"
-        onClick={() => navigate("/chatDoctor")}
-      >
-        <span className="chat-icon">💬</span>
-        <span className="chat-text">Messages</span>
-      </button>
     </div>
   );
 }

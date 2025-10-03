@@ -69,7 +69,8 @@ const HLogin = ({ onClose, switchToSignup }) => {
         } else {
           sessionStorage.setItem("hospitalSession", JSON.stringify(sessionData));
         }
-
+        sessionStorage.setItem("userId",data.hospitalId);
+        sessionStorage.setItem("userType", "Hospital"); // "Doctor" or "Hospital"
         toast.success("Login Successfully");
         onClose();
         navigate("/homeHospital", { state: { hospitalId: data.hospitalId } });

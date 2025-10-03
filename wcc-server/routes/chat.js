@@ -60,7 +60,7 @@ router.post("/send", async (req, res) => {
     await newMessage.save();
 
     await Conversation.findByIdAndUpdate(conversationId, {
-      lastMessage: text,
+      lastMessage: newMessage._id,
       updatedAt: new Date()
     });
 
@@ -87,7 +87,8 @@ router.get("/:userId/:userType/conversations", async (req, res) => {
     const { userId, userType } = req.params;
     const conversations = await Conversation.find({
       participants: { $elemMatch: { id: userId, type: userType } }
-    }).populate("participants.id", "name email");
+    }).populate("participants.id", "name email")
+    .populate("lastMessage", "text createdAt fileUrl sender");
 
     res.json({ status: "ok", data: conversations });
   } catch (err) {
